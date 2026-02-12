@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kalam', cursive;
+  background: linear-gradient(135deg, #ffe6e6 0%, #ffd1d1 50%, #ffb8b8 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background roses */
+body::before {
+  content: '🌹';
+  position: absolute;
+  font-size: 150px;
+  opacity: 0.08;
+  top: 10%;
+  left: 10%;
+  animation: float 15s ease-in-out infinite;
+}
+
+body::after {
+  content: '🌹';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.08;
+  bottom: 15%;
+  right: 15%;
+  animation: float 18s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+.page {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Decorative corner */
+.corner-decor {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff4d4d,
+    #ff4d4d 20px,
+    white 20px,
+    white 40px
+  );
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Letter paper */
+.letter-paper {
+  background: #fff;
+  border: 3px solid #ff6b6b;
+  border-radius: 15px;
+  padding: 50px 60px;
+  box-shadow: 0 20px 60px rgba(255, 0, 0, 0.2);
+  position: relative;
+  transform: rotate(-1deg);
+}
+
+/* Stamp container */
+.stamp-container {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.postmark {
+  background: #ff4d4d;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  border: 3px dashed white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  transform: rotate(15deg);
+}
+
+.teddy {
+  font-size: 50px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Letter content */
+.greeting {
+  font-family: 'Caveat', cursive;
+  font-size: 42px;
+  color: #c41e3a;
+  margin-bottom: 25px;
+}
+
+.message {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.message strong {
+  color: #ff1744;
+  font-size: 24px;
+}
+
+/* Buttons */
+.buttons-area {
+  display: flex;
+  gap: 20px;
+  margin: 40px 0;
+  position: relative;
+  min-height: 70px;
+}
+
+.yes-button {
+  background: linear-gradient(135deg, #ff1744 0%, #ff4569 100%);
+  color: white;
+  border: none;
+  padding: 18px 50px;
+  font-size: 26px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Kalam', cursive;
+  box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.yes-button:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 23, 68, 0.6);
+}
+
+.no-button {
+  background: #f0f0f0;
+  color: #666;
+  border: 3px solid #ddd;
+  padding: 18px 50px;
+  font-size: 26px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Kalam', cursive;
+  transition: all 0.2s ease;
+  position: absolute;
+  left: 220px;
+}
+
+.no-button:hover {
+  background: #e8e8e8;
+}
+
+/* Success message */
+.success {
+  display: none;
+  text-align: center;
+  animation: pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success h2 {
+  font-size: 48px;
+  color: #ff1744;
+  margin-bottom: 15px;
+}
+
+.success p {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Signature */
+.signature {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #555;
+}
+
+.signature .name {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #c41e3a;
+  margin-top: 5px;
+}
